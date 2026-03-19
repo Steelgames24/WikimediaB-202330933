@@ -1,0 +1,76 @@
+﻿@model Models.Media
+
+@if (Model != null)
+{
+    var owner = DAL.DB.Users.Get(Model.OwnerId);
+    var connectedUser = Models.User.ConnectedUser;
+
+
+    bool isOwner = connectedUser != null && Model.OwnerId == connectedUser.Id;
+    bool isAdmin = connectedUser != null && connectedUser.IsAdmin;
+
+
+    if (!Model.Shared && !isOwner && !isAdmin)
+    {
+        <div style="text-align:center; padding:40px;">
+            <i class="fa fa-ban" style="font-size:3em; color:lightgray;"></i>
+            <h3 style="color:gray; margin-top:16px;">Cette vidéo n'est pas disponible.</h3>
+        </div>
+    }
+    <dl>
+        <dd>
+            @if (isOwner || isAdmin)
+            {
+                if (Model.Shared)
+                {
+                    <span style="color:grey">
+                        [Partagé]
+                    </span>
+                }
+                else
+                {
+                    <span style="color:grey">
+                        [Non partagé]
+                    </span>
+                }
+            }
+        </dd>
+        <dd>
+            @Model.Title
+        </dd>
+        <dd>
+            @Helper.YoutubePlayer(Model.YoutubeId)
+        </dd>
+        <dd class="description">
+            @Model.Description
+        </dd>
+        <dt>
+            Catégorie
+        </dt>
+
+        <dd>
+            @Model.Category
+        </dd>
+
+        <dt>
+            Date de publication
+        </dt>
+
+        <dd>
+            @Helper.When(Model.PublishDate)
+        </dd>
+        @if (owner != null)
+        {
+            <dt>
+                Ajouté par
+            </dt>
+            <dd>
+                <div style="display:flex; align-items:center; gap:8px; margin-top:4px;">
+                    <div class="UserMediumAvatar" style="background: url('@owner.Avatar');">
+                    </div>
+                    <div class="ellipsis">@owner.Name</div>
+                </div>
+            </dd>
+        }
+    </dl>
+}

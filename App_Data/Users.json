@@ -1,0 +1,35 @@
+[
+  {
+    "Name": "Modérateur",
+    "Email": "admin@app.net",
+    "Password": "WrlJ2Wm2NgzA2bjAfyXIheughlqhxwl1Niuv60gVij8=M54D55bnJyGmTUGOmB1gdr1cjxU=",
+    "Access": 3,
+    "Blocked": false,
+    "Verified": true,
+    "Notify": true,
+    "Avatar": "/App_Assets/Users/5aa8957d-e980-4cac-b915-aaa63d0909f1.jpeg",
+    "Id": 1
+  },
+  {
+    "Name": "Charlot",
+    "Email": "charlot@yopmail.com",
+    "Password": "WrlJ2Wm2NgzA2bjAfyXIheughlqhxwl1Niuv60gVij8=M54D55bnJyGmTUGOmB1gdr1cjxU=",
+    "Access": 2,
+    "Blocked": false,
+    "Verified": true,
+    "Notify": true,
+    "Avatar": "/App_Assets/Users/no_avatar.png",
+    "Id": 2
+  },
+  {
+    "Name": "test",
+    "Email": "race2427@gmail.com",
+    "Password": "uLxRViSGvDtVSlDt1GCRGMmWCwiwC2MxfxaGcYvHTR4=jsEh1VJbsGl302xbSzjDzlEIlMc=",
+    "Access": 2,
+    "Blocked": false,
+    "Verified": true,
+    "Notify": true,
+    "Avatar": "/App_Assets/Users/cb045ff7-fd60-4b90-a7e9-eaed2c6111ed.jpeg",
+    "Id": 3
+  }
+]
